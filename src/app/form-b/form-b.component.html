@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-8 mx-auto">
+        <form>
+            <div class="row mt-5 border rounded p-3">
+                <div class="col-6">
+                    <label for="fName">First Name</label>
+                    <input type="text" class="form-control" id="fName">
+                </div>
+                <div class="col-6">
+                    <label for="lName">Last Name</label>
+                    <input type="text" class="form-control" id="lName">
+                </div>
+                <div class="col-6">
+                    <label for="options">How should we contact you?</label>
+                    <div (change)="selected($event)">
+                        <div class="form-check form-check-inline ">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="phone"
+                                value="phone">
+                            <label class="form-check-label" for="phone">Phone</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="email"
+                                value="email">
+                            <label class="form-check-label" for="email">Email</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6" *ngIf="selectedOption === 'phone'">
+                    <label for="phn">Phone</label>
+                    <input type="text" class="form-control" id="phn">
+                </div>
+                <div class="col-6" *ngIf="selectedOption === 'email'">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
